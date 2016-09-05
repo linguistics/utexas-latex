@@ -1,0 +1,301 @@
+% UT Austin graduate thesis style. https://github.com/linguistics/utexas-latex
+% License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
+\NeedsTeXFormat{LaTeX2e}%[1994/06/01]
+\ProvidesClass{utexasthesis}[2016/09/05 v0.3 University of Texas at Austin graduate thesis style]
+
+% prepare boolean variables and set defaults
+\newif\if@masters\@mastersfalse
+\newif\if@copyright\@copyrightfalse
+\newif\if@draft\@draftfalse
+% handle optional arguments
+\DeclareOption{masters}{\@masterstrue}
+\DeclareOption{copyright}{\@copyrighttrue}
+\DeclareOption{draft}{\@drafttrue\PassOptionsToClass{draft}{report}}
+% capture the basic setspace package options for passing into setspace later
+\def\@setspaceoption{onehalfspacing}
+\DeclareOption{singlespacing}{\gdef\@setspaceoption{singlespacing}}
+\DeclareOption{onehalfspacing}{\gdef\@setspaceoption{onehalfspacing}}
+\DeclareOption{doublespacing}{\gdef\@setspaceoption{doublespacing}}
+% handle font size, warning for 10pt and 11pt, defaulting to 12pt
+\def\@sizeoption{12pt}
+\newcommand{\@sizeoption@warning}{%
+  \ClassWarningNoLine{utexasthesis}{The formatting guidelines recommend using 12pt}}
+\DeclareOption{10pt}{\gdef\@sizeoption{10pt}\@sizeoption@warning}
+\DeclareOption{11pt}{\gdef\@sizeoption{11pt}\@sizeoption@warning}
+% cascade any other options into the \LoadClass[...]{report} call
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+% process options and load report.cls
+\ProcessOptions\relax
+\LoadClass[\@sizeoption]{report}
+
+% 1.25 inch margins except for the page number, which should be 1in from the bottom
+\RequirePackage[letterpaper,hmargin=1.25in,top=1.25in,bottom=1in,includefoot]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[\@setspaceoption]{setspace}
+% The indentfirst package ensures that every paragraph is indented,
+% even those at the beginning of chapters/sections
+\RequirePackage{indentfirst}
+% > Paragraph indentions may be five to ten spaces.
+% The guidelines/examples use .5 inch, though.
+\setlength{\parindent}{.5in}
+
+\RequirePackage{natbib}
+\setcitestyle{round,comma,yysep={;}}
+\bibliographystyle{named}
+
+\RequirePackage{url}
+\RequirePackage{hyperref}
+
+% table of contents configuration
+\RequirePackage{tocloft}
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\cftdotsep}{0.25} % default: 4.5
+
+% > Headings may be bolded and no more than 2 points larger than the rest of the text.
+% When the 12pt option is used, \large is actually 14.4pt, but, close enough?
+\newcommand{\headingsize}{\large}
+\renewcommand{\Large}{\headingsize}
+\renewcommand{\LARGE}{\headingsize}
+\renewcommand{\huge}{\headingsize}
+\renewcommand{\Huge}{\headingsize}
+
+% chapter heading configuration
+% simplified version of the original from report.cls
+\def\@makechapterhead#1{{%
+  \centering\headingsize
+  % print "Chapter N"
+  \@chapapp\space\thechapter
+  \par\nobreak
+  \vskip.25\baselineskip
+  \@makeschapterhead{#1}
+}}
+% star-chapter variation
+\def\@makeschapterhead#1{{
+  \centering\headingsize
+  % prevent page break between following lines at all costs
+  \interlinepenalty=10000
+  \bfseries #1\par\nobreak
+  \vskip\baselineskip
+}}
+
+% Set up default values and setters
+\def\@university{University of Texas at Austin}
+\newcommand{\graduationdate}[2]{\gdef\@graduationmonth{#1}\gdef\@graduationyear{#2}}
+\newcommand{\previousdegrees}[1]{\gdef\@previousdegrees{#1}}
+\newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand{\cosupervisor}[1]{\gdef\@cosupervisor{#1}}
+\def\@othercommiteemembers{}
+\newcommand{\othercommiteemembers}[1]{\gdef\@othercommiteemembers{#1}}
+
+% handle PhD vs. masters based on optional masters argument, which defaults to false
+\if@masters
+  \gdef\@doctype{Thesis}
+  \gdef\@degree{Master of Arts}
+  \gdef\@degreeabbr{M.A.}
+\else
+  \gdef\@doctype{Dissertation}
+  \gdef\@degree{Doctor of Philosophy}
+  \gdef\@degreeabbr{Ph.D.}
+\fi
+
+\newenvironment{middlecenter}{\vspace*{\fill}\begin{center}}%
+                             {\end{center}\vspace*{\fill}}
+
+\newcommand{\@signature}[1]{\parskip=\baselineskip\par\rule{\textwidth}{.7pt}\parskip=-4.4pt\par#1}
+% this question is one of the best and only sources on \@for I could find: https://tex.stackexchange.com/q/2933
+\newcommand{\@makesignatures}{%
+  \@signature{\@supervisor, Supervisor}
+  \@ifundefined{@cosupervisor}{}{%
+    \@signature{\@cosupervisor, Co-Supervisor}}
+  \@for\@i:=\@othercommiteemembers\do{\@signature{\@i}}%
+}
+
+\renewcommand{\maketitle}{%
+  % The copyright, signature, title and dedication pages are counted but not numbered,
+  % and so they all get the empty pagestyle
+  % Generate the copyright page if specified as an option
+  \if@copyright
+    \clearpage\thispagestyle{empty}
+    \begin{middlecenter}
+      \begin{spacing}{4}
+        \bfseries
+        Copyright
+
+        by
+
+        \@author
+
+        \@graduationyear
+      \end{spacing}
+    \end{middlecenter}
+  \fi
+
+  % generate signature page, which differs between Masters and Dissertation
+  \clearpage\thispagestyle{empty}
+  \if@masters
+    \begin{center}
+      \begin{doublespace}
+        \textbf{\small The \@doctype{} committee for \@author{} certifies that this is the approved
+        version of the following \MakeLowercase\@doctype:}
+
+        \hbox
+
+        \hbox
+
+        \textbf{\headingsize\@title}
+
+        \hbox
+
+        \hbox
+      \end{doublespace}
+    \end{center}
+    \hspace{.5\textwidth}\begin{minipage}{.5\textwidth}
+      \begin{doublespace}
+        \textbf{APPROVED BY}
+
+        \textbf{SUPERVISING COMMITTEE:}
+
+        \@makesignatures
+      \end{doublespace}
+    \end{minipage}
+  \else
+    \begin{center}
+      \begin{singlespace}
+        The \@doctype{} Committee for \@author{} certifies that this is the approved
+        version of the following \MakeLowercase\@doctype:
+
+        \hbox
+      \end{singlespace}
+      \begin{doublespace}
+        \textbf{\headingsize\@title}
+      \end{doublespace}
+    \end{center}
+    \hspace{.5\textwidth}\begin{minipage}{.5\textwidth}
+      \begin{singlespace}
+        \textbf{Committee:}
+        \vskip1.5\baselineskip
+
+        \@makesignatures
+      \end{singlespace}
+    \end{minipage}
+  \fi
+
+  % generate the actual title page
+  \clearpage\thispagestyle{empty}
+  \begin{center}
+    \begin{doublespace}
+      \textbf{\headingsize\@title}
+
+      \hbox
+
+      by
+
+      \hbox
+
+      \textbf{\@author, \@previousdegrees}
+
+      \hbox
+
+      \textbf{\@doctype}
+
+      \hbox
+
+      Presented to the Faculty of the Graduate School
+
+      of the \@university
+
+      in Partial Fulfillment
+
+      of the Requirements
+
+      for the Degree of
+
+      \hbox
+
+      \textbf{\@degree}
+
+      \hbox
+
+      The \@university
+
+      \@graduationmonth{} \@graduationyear{}
+    \end{doublespace}
+  \end{center}
+  \clearpage
+}
+
+% Optional dedication page is triggered by using the dedication environment in the right place
+\newenvironment{dedication}{\thispagestyle{empty}\begin{middlecenter}}{\end{middlecenter}}
+
+% Optional acknowledgments page is triggered by using the acknowledgments environment in the right place
+\newenvironment{acknowledgments}{%
+  \chapter*{Acknowledgments}
+}{}
+
+% Required abstract page is triggered by using the abstract environment in the right place
+\renewenvironment{abstract}{%
+  \clearpage
+  \begin{center}
+    \begin{doublespace}
+      {\headingsize\textbf{\@title}}
+
+      \hbox
+
+      by
+
+      \hbox
+
+      \@author, \@degreeabbr
+
+      The \@university, \@graduationyear
+
+      \@ifundefined{@cosupervisor}{
+        Supervisor: \@supervisor{}
+      }{
+        Supervisors: \@supervisor{} and \@cosupervisor{}
+      }
+    \end{doublespace}
+  \end{center}
+  \indent\ignorespaces%
+}{}
+
+\pagenumbering{roman}
+
+\newcommand{\maketableofcontents}{%
+  \tableofcontents
+  \clearpage\pagenumbering{arabic}
+}
+
+\newcommand{\makebibliography}[1]{%
+  \clearpage%
+  \addcontentsline{toc}{chapter}{\bibname}%
+  \bibliography{#1}
+}
+
+% Optional vita page is triggered by using the vita environment in the right place
+\newenvironment{vita}{%
+  \clearpage%
+  \addcontentsline{toc}{chapter}{Vita}%
+  \chapter*{Vita}
+  \noindent\ignorespaces%
+}{}
+
+\newenvironment{address}{%
+  \setlength{\parskip}{1\baselineskip}\par\noindent%
+  \makebox[1in][l]{Address:}%
+  \begin{minipage}[t]{5in}%
+}{\end{minipage}}
+
+\newcommand{\declaretypist}[1]{\setlength{\parskip}{1.7\baselineskip}\par\noindent%
+  This \MakeLowercase\@doctype{} was typed by #1.}
+
+% overrides in draft mode:
+\if@draft
+  \renewcommand{\maketitle}{}
+  \renewcommand{\maketableofcontents}{%
+    % Just like \maketableofcontents but without the \tableofcontents
+    \clearpage\pagenumbering{arabic}
+  }
+  % instead of clearing the page, just insert a bit of space
+  \renewcommand{\chapter}{\vskip\baselineskip\thispagestyle{plain}\secdef\@chapter\@schapter}
+\fi
