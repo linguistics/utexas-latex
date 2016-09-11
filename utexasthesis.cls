@@ -1,7 +1,7 @@
 % UT Austin graduate thesis style. https://github.com/linguistics/utexas-latex
 % License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
 \NeedsTeXFormat{LaTeX2e}%[1994/06/01]
-\ProvidesClass{utexasthesis}[2016/09/05 v0.3 University of Texas at Austin graduate thesis style]
+\ProvidesClass{utexasthesis}[2016/09/05 v0.4 University of Texas at Austin graduate thesis style]
 
 % prepare boolean variables and set defaults
 \newif\if@masters\@mastersfalse
@@ -37,19 +37,19 @@
 \RequirePackage{indentfirst}
 % > Paragraph indentions may be five to ten spaces.
 % The guidelines/examples use .5 inch, though.
-\setlength{\parindent}{.5in}
+\setlength{\parindent}{.5in} % defaults to ~1.5em
 
 \RequirePackage{natbib}
 \setcitestyle{round,comma,yysep={;}}
 \bibliographystyle{named}
 
-\RequirePackage{url}
-\RequirePackage{hyperref}
-
 % table of contents configuration
 \RequirePackage{tocloft}
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\cftdotsep}{0.25} % default: 4.5
+
+\RequirePackage[hyphens]{url}
+\RequirePackage{hyperref}
 
 % > Headings may be bolded and no more than 2 points larger than the rest of the text.
 % When the 12pt option is used, \large is actually 14.4pt, but, close enough?
@@ -256,6 +256,7 @@
       }
     \end{doublespace}
   \end{center}
+
   \indent\ignorespaces%
 }{}
 
@@ -268,6 +269,7 @@
 
 \newcommand{\makebibliography}[1]{%
   \clearpage%
+  % TODO: make the TOC Bibliography link go to the right page
   \addcontentsline{toc}{chapter}{\bibname}%
   \bibliography{#1}
 }
