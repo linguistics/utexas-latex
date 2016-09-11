@@ -22,6 +22,7 @@
   \ClassWarningNoLine{utexasthesis}{The formatting guidelines recommend using 12pt}}
 \DeclareOption{10pt}{\gdef\@sizeoption{10pt}\@sizeoption@warning}
 \DeclareOption{11pt}{\gdef\@sizeoption{11pt}\@sizeoption@warning}
+\DeclareOption{12pt}{\gdef\@sizeoption{12pt}}
 % cascade any other options into the \LoadClass[...]{report} call
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 % process options and load report.cls
