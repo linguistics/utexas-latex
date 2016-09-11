@@ -1,0 +1,75 @@
+## University of Texas at Austin graduate thesis LaTeX style
+
+The [Digital Submission Requirement](https://gradschool.utexas.edu/academics/theses-and-dissertations/digital-submission-requirement) page describes the requirements for Masters and Ph.D. thesis submissions.
+Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [utexas graduate thesis style](https://www.google.com/search?q=utexas+graduate+thesis+style).
+
+
+### Instructions
+
+1. Download the [`utexasthesis.cls`](./utexasthesis.cls) file into your working directory,
+2. Replace your initial `\documentclass{...}` call with `\documentclass{utexasthesis}`
+3. Fill in the required personal information by calling the following commands in your preamble (i.e., somewhere before `\begin{document}`):
+  - `\title{The Title of Your Dissertation or Treatise}`
+  - `\author{Full Official Name}`
+  - `\previousdegrees{B.A., M.A.}`
+  - `\graduationdate{May}{2017}`
+  - `\supervisor{Supervisor Name}`
+  - `\cosupervisor{Cosupervisor Name}`
+    + `\cosupervisor{}` is optional, unless you use the `masters` option (described [below](#options)),
+      in which case it's required and `\othercommiteemembers{}` is ignored.
+  - `\othercommiteemembers{Member's Name, Member's Name, Member's Name}`
+3. Supply `\maketitle` and the other commands and environments in the proper order.
+4. Use `\maketableofcontents` instead of `\tableofcontents`
+5. Use `\makebibliography{yourbib}` instead of `\bibliography{yourbib}`
+
+
+### Customizations
+
+The formatting guide doesn't specify a required font face.
+The `utexasthesis` class doesn't set one, which leaves "Computer Modern Roman" as the default font family.
+
+You can use any font supported by your LaTeX distribution; e.g., to use the Palatino font, as in the formatting guideline's examples:
+
+    \usepackage{palatino}
+
+Or to use Times, along with a teletype font that's more compact than Courier (which is used in URLs):
+
+    \usepackage{times}
+    \renewcommand*\ttdefault{cmvtt}
+
+
+### Options
+
+The `utexasthesis` class can be customized with several optional arguments,
+which are supplied in the `\documentclass{}` call, e.g., `\documentclass[masters]{utexasthesis}`.
+
+- **`masters`**: switch format to Masters thesis, which has the following effects:
+  + The document type is set to "Thesis" instead of "Dissertation".
+  + The degree is set to "Master of Arts" (M.A.) instead of "Doctor of Philosophy" (Ph.D.).
+  + The signatures page is styled differently.
+- **`copyright`**: adds a copyright page at the beginning of your thesis.
+- Line spacing (defaults to `onehalfspacing` if omitted):
+  + **`singlespacing`**: uses single-spacing throughout the document.
+  + **`onehalfspacing`**: uses 1.5-spacing throughout the document.
+  + **`doublespacing`**: uses double-spacing throughout the document.
+- Font sizes (defaults to `12pt` if omitted):
+  + **`10pt`**: Use 10 point font, which is not recommended by the formatting guidelines.
+  + **`11pt`**: Use 11 point font, which is not recommended by the formatting guidelines.
+  + **`12pt`**: Use 12 point font.
+- **`draft`**: renders a compact version of your thesis. The layout does not comply with the graduate school requirements, but may be useful to print out drafts for review.
+  + This option applies the usual `draft` class options to the underlying `report` class.
+  + The copyright page is omitted even if the `copyright` option is used.
+  + The signatures page is omitted.
+  + The main title page is omitted.
+  + Chapters do not trigger a page break.
+
+All of these can be used in combination, separated by commas.
+The few options that have overlapping effects will give priority to the last-listed argument as enumerated above.
+E.g., `\documentclass[12pt,draft,11pt]{utexasthesis}` will render the Masters thesis format in 12 point font, even though `11pt` comes after `12pt` in the list of options.
+
+
+## License
+
+The `utexasthesis` document class and related materials are [CC0](https://creativecommons.org/publicdomain/zero/1.0/)-licensed.
+This is similar to the [Unlicense](http://unlicense.org) and [WTFPL](http://wtfpl.net).
+This means I (Christopher Brown), have waived all copyright rights to this work, to the extent allowed by law.
