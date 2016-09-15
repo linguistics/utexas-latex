@@ -6,7 +6,7 @@ Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [ute
 
 ### Instructions
 
-1. Download the [`utexasthesis.cls`](https://raw.githubusercontent.com/chbrown/utexas-latex/master/utexasthesis.cls) (right click and "Save As...") file into your working directory
+1. Download the [`utexasthesis.cls`](https://raw.githubusercontent.com/linguistics/utexas-latex/master/utexasthesis.cls) (right click and "Save As...") file into your working directory
 2. Replace your initial `\documentclass{...}` call with `\documentclass{utexasthesis}`
 3. Fill in the required personal information by calling the following commands in your preamble (i.e., somewhere before `\begin{document}`):
   - `\title{The Title of Your Dissertation or Treatise}`
