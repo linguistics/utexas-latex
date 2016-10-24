@@ -1,0 +1,105 @@
+%% utexasthesis.cls is available from https://github.com/linguistics/utexas-latex
+\documentclass{utexasthesis}
+% \documentclass[copyright,12pt,onehalfspacing,draft]{utexasthesis}
+
+%% Required fields
+%% ===============
+%% Full official title of your thesis (use \\ to force a line break)
+\title{Title of Dissertation or Treatise Centered \\ And Double-Spaced}
+%% Your full official name
+\author{Full Official Name}
+%% Previous academic degrees, separated by commas
+\previousdegrees{B.A., M.A.}
+%% Month and year of graduation (month may be May, August, or December)
+\graduationdate{May}{2017}
+%% Your thesis supervisor, full name only
+\supervisor{Supervisor Name}
+%% Your thesis co-supervisor, if any (leave commented if not applicable)
+% \cosupervisor{Cosupervisor Name}
+%% Other committee members full names, comma-separated.
+%% Comment this out if empty, e.g., for a masters thesis with only a supervisor and cosupervisor.
+\othercommiteemembers{Member's Name, Member's Name, Member's Name, Member's Name}
+
+%% Optional customizations
+%% =======================
+%% Use Palatino as the primary font face
+\usepackage{palatino}
+%% and Computer Modern Typewriter Proportional as the teletype font face
+\renewcommand*\ttdefault{cmvtt}
+
+\begin{document}
+
+%% This produces the copyright page (if specified), the signature page, and title page.
+\maketitle
+
+%% The dedication is optional and fills an entire page.
+\begin{dedication}
+  I dedicate this to my water bottle, Prince Charles.
+\end{dedication}
+
+%% The acknowledgments, abstract, and table(s) of contents/tables/figures pages are numbered with roman numerals.
+
+%% The acknowledgments is optional and fills an entire page.
+\begin{acknowledgments}
+  Many thanks to Linus, Donald, Leslie, and so many others; you know who you are.
+\end{acknowledgments}
+
+%% The abstract is required.
+\begin{abstract}
+  Indent and begin abstract here. It should be a concise statement of the nature and content of the ETD. The text must be either double-spaced or 1.5-spaced. Abstracts should be limited to 350 words.
+\end{abstract}
+
+%% The table of contents is required.
+\maketableofcontents
+
+%% The list of tables is optional
+% \newpage\listoftables\addcontentsline{toc}{chapter}{\listtablename}
+
+%% The list of figures is optional
+% \newpage\listoffigures\addcontentsline{toc}{chapter}{\listfigurename}
+
+%% The following pages are numbered with arabic numerals, starting with 1
+
+\chapter{Introduction}
+
+Your ETD must be correct in spelling and punctuation and presented in a consistent, structured format. A single, legible font must be used throughout, the only exceptions being in tables, figures, graphs, appendices, and supplemental files. Headings may be bolded and no more than 2 points larger than the rest of the text. The font size should be sufficient for the average person to read the document on a computer monitor without difficulty (12-pt is recommended.) Accuracy and consistency in presentation and form make your ETD a usable research tool for other readers.
+
+
+\section{A Section}
+
+This is the first line of the first section of the first chapter, but not the first line of the first chapter, which belongs to no section.
+
+
+\chapter{Methodology}
+\label{chap:methodology}
+
+This is the first line of Chapter~\ref{chap:methodology}, which I am calling ``Methodology.''
+It consists of this paragraph, and later, Section~\ref{sec:method-issues}, which leads with a long-winded header, but quickly devolves into shallow platitudes.
+
+\section{Methodological issues in the current literature: Inherent assumptions, impossible biases, and intellectual conundrums}
+\label{sec:method-issues}
+
+As you can see, there's a lot going on in this section.
+
+%% If we actually cited anything, the bibliography would show up here.
+% \makebibliography{main}
+
+%% The Vita is optional, but must take no more than a single page if included.
+\begin{vita}
+  Full Official Name was born in Austin, Texas. After completing their work and graduating from Austin High School, they went to college somewhere, and graduated, but then decided two graduations weren't enough.
+  After that, they entered the Graduate School at the University of Texas at Austin.
+
+  %% The graduate school recommends using an email address as your address.
+  \begin{address}
+    shortname@utexas.edu
+
+    123 Main St.
+
+    Austin, Texas 78712
+  \end{address}
+
+  %% declaring a typist is optional
+  \declaretypist{the author}
+\end{vita}
+
+\end{document}
