@@ -42,7 +42,7 @@
 
 \RequirePackage{natbib}
 \setcitestyle{round,comma,yysep={;}}
-\bibliographystyle{named}
+\bibliographystyle{plainnat}
 
 % table of contents configuration
 \RequirePackage{tocloft}
