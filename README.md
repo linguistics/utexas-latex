@@ -18,9 +18,9 @@ Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [ute
     + `\cosupervisor{}` is optional, unless you use the `masters` option (described [below](#options)),
       in which case it's required and `\othercommiteemembers{}` is ignored.
   - `\othercommiteemembers{Member's Name, Member's Name, Member's Name}`
-3. Supply `\maketitle` and the other commands and environments in the proper order.
-4. Use `\maketableofcontents` instead of `\tableofcontents`
-5. Use `\makebibliography{yourbib}` instead of `\bibliography{yourbib}`
+4. Supply `\maketitle` and the other commands and environments in the proper order.
+5. Use `\maketableofcontents` instead of `\tableofcontents`
+6. Use `\makebibliography{yourbib}` instead of `\bibliography{yourbib}`
 
 Alternatively, you can use the [`basic.tex`](https://raw.githubusercontent.com/linguistics/utexas-latex/master/template/basic.tex) (right click and "Save As...") example as a starting point, replacing the placeholder text with your own information.
 View the `pdflatex` render of `basic.tex` on GitHub at [`basic.pdf`](https://github.com/linguistics/utexas-latex/blob/master/template/basic.pdf), or [download](https://raw.githubusercontent.com/linguistics/utexas-latex/master/template/basic.pdf).
@@ -59,7 +59,8 @@ which are supplied in the `\documentclass{}` call, e.g., `\documentclass[masters
   + **`10pt`**: Use 10 point font, which is not recommended by the formatting guidelines.
   + **`11pt`**: Use 11 point font, which is not recommended by the formatting guidelines.
   + **`12pt`**: Use 12 point font.
-- **`draft`**: renders a compact version of your thesis. The layout does not comply with the graduate school requirements, but may be useful to print out drafts for review.
+- **`draft`**: renders a compact version of your thesis.
+  The layout does not comply with the graduate school requirements, but may be useful to print out drafts for review.
   + This option applies the usual `draft` class options to the underlying `report` class.
   + The copyright page is omitted even if the `copyright` option is used.
   + The signatures page is omitted.
@@ -67,8 +68,23 @@ which are supplied in the `\documentclass{}` call, e.g., `\documentclass[masters
   + Chapters do not trigger a page break.
 
 All of these can be used in combination, separated by commas.
-The few options that have overlapping effects will give priority to the last-listed argument as enumerated above.
-E.g., `\documentclass[12pt,draft,11pt]{utexasthesis}` will render the Masters thesis format in 12 point font, even though `11pt` comes after `12pt` in the list of options.
+The few options that have overlapping effects will give priority to the last-listed argument(s) in the listings above.
+E.g., `\documentclass[masters,12pt,draft,11pt]{utexasthesis}` will render the Masters thesis format in 12 point font,
+even though `11pt` comes after `12pt` in the list of options.
+
+
+### Packages
+
+The following packages are imported by `utexasthesis`:
+
+* `geometry` (to set paper size, layout dimensions, and margins)
+* `fontenc`
+* `setspace` (configurable via `singlespacing` / `onehalfspacing` / `doublespacing` option)
+* `indentfirst` (to indent every paragraph, even at the beginning of chapters and sections)
+* `natbib`
+* `tocloft`
+* `url`
+* `hyperref`
 
 
 ## License
