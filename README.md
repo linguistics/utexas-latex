@@ -85,6 +85,7 @@ The following packages are imported by `utexasthesis`:
 * `tocloft`
 * `url`
 * `hyperref`
+* `doi` (to hyperlink DOIs in bibliography)
 
 
 ## License

@@ -51,6 +51,8 @@
 
 \RequirePackage[hyphens]{url}
 \RequirePackage{hyperref}
+% hyperlink DOIs in bibliography (for BibTeX entries with doi fields)
+\RequirePackage{doi}
 
 % > Headings may be bolded and no more than 2 points larger than the rest of the text.
 % When the 12pt option is used, \large is actually 14.4pt, but, close enough?
