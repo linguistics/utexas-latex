@@ -16,8 +16,8 @@ Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [ute
    - `\supervisor{Supervisor Name}`
    - `\cosupervisor{Cosupervisor Name}`
      + `% \cosupervisor{}` is optional, unless you use the `masters` option (described [below](#options)),
-       in which case it's required and `\othercommiteemembers{}` is ignored.
-   - `\othercommiteemembers{Member's Name, Member's Name, Member's Name}`
+       in which case it's required and `\othercommitteemembers{}` is ignored.
+   - `\othercommitteemembers{Member's Name, Member's Name, Member's Name}`
 4. Supply `\maketitle` and the other commands and environments in the proper order.
 5. Use `\maketableofcontents` instead of `\tableofcontents`
 6. Use `\makebibliography{yourbib}` instead of `\bibliography{yourbib}`

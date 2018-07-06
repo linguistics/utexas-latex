@@ -1,7 +1,7 @@
 % UT Austin graduate thesis style. https://github.com/linguistics/utexas-latex
 % License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
 \NeedsTeXFormat{LaTeX2e}%[1994/06/01]
-\ProvidesClass{utexasthesis}[2016/09/05 v0.4 University of Texas at Austin graduate thesis style]
+\ProvidesClass{utexasthesis}[2018/07/06 v0.5 University of Texas at Austin graduate thesis style]
 
 % prepare boolean variables and set defaults
 \newif\if@masters\@mastersfalse
@@ -87,8 +87,8 @@
 \newcommand{\previousdegrees}[1]{\gdef\@previousdegrees{#1}}
 \newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
 \newcommand{\cosupervisor}[1]{\gdef\@cosupervisor{#1}}
-\def\@othercommiteemembers{}
-\newcommand{\othercommiteemembers}[1]{\gdef\@othercommiteemembers{#1}}
+\def\@othercommitteemembers{}
+\newcommand{\othercommitteemembers}[1]{\gdef\@othercommitteemembers{#1}}
 
 % handle PhD vs. masters based on optional masters argument, which defaults to false
 \if@masters
@@ -110,7 +110,7 @@
   \@signature{\@supervisor, Supervisor}
   \@ifundefined{@cosupervisor}{}{%
     \@signature{\@cosupervisor, Co-Supervisor}}
-  \@for\@i:=\@othercommiteemembers\do{\@signature{\@i}}%
+  \@for\@i:=\@othercommitteemembers\do{\@signature{\@i}}%
 }
 
 \renewcommand{\maketitle}{%
