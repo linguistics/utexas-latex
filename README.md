@@ -21,6 +21,7 @@ Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [ute
 4. Supply `\maketitle` and the other commands and environments in the proper order.
 5. Use `\maketableofcontents` instead of `\tableofcontents`
 6. Use `\makebibliography{yourbib}` instead of `\bibliography{yourbib}`
+   (and be sure to specify a style with `\bibliographystyle{...}`).
 
 Alternatively, you can use the [`basic.tex`](https://raw.githubusercontent.com/linguistics/utexas-latex/master/template/basic.tex) (right click and "Save As...") example as a starting point, replacing the placeholder text with your own information.
 View the `pdflatex` render of `basic.tex` on GitHub at [`basic.pdf`](https://github.com/linguistics/utexas-latex/blob/master/template/basic.pdf), or [download](https://raw.githubusercontent.com/linguistics/utexas-latex/master/template/basic.pdf).
