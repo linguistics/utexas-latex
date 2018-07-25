@@ -81,10 +81,18 @@
   \vskip\baselineskip
 }}
 
-% toc heading configuration
+% toc/lot/lof heading configuration
 \setlength{\cftbeforetoctitleskip}{\z@}
 \setlength{\cftaftertoctitleskip}{.25\baselineskip}
 \renewcommand{\cfttoctitlefont}{\headingsize\bfseries}
+% copy toc to lot
+\setlength{\cftbeforelottitleskip}{\cftbeforetoctitleskip}
+\setlength{\cftafterlottitleskip}{\cftaftertoctitleskip}
+\renewcommand{\cftlottitlefont}{\cfttoctitlefont}
+% copy toc to lof
+\setlength{\cftbeforeloftitleskip}{\cftbeforetoctitleskip}
+\setlength{\cftafterloftitleskip}{\cftaftertoctitleskip}
+\renewcommand{\cftloftitlefont}{\cfttoctitlefont}
 
 % Set up default values and setters
 \def\@university{University of Texas at Austin}
