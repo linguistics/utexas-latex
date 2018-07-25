@@ -81,6 +81,11 @@
   \vskip\baselineskip
 }}
 
+% toc heading configuration
+\setlength{\cftbeforetoctitleskip}{\z@}
+\setlength{\cftaftertoctitleskip}{.25\baselineskip}
+\renewcommand{\cfttoctitlefont}{\headingsize\bfseries}
+
 % Set up default values and setters
 \def\@university{University of Texas at Austin}
 \newcommand{\graduationdate}[2]{\gdef\@graduationmonth{#1}\gdef\@graduationyear{#2}}
