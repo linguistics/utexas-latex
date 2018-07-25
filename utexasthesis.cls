@@ -253,6 +253,10 @@
   \clearpage
   \begin{center}
     \begin{doublespace}
+      {\headingsize\textbf{Abstract}}
+
+      \hbox
+
       {\headingsize\textbf{\@title}}
 
       \hbox
