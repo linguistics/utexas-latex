@@ -265,6 +265,7 @@
 \pagenumbering{roman}
 
 \newcommand{\maketableofcontents}{%
+  \clearpage
   \tableofcontents
   \clearpage\pagenumbering{arabic}
 }
