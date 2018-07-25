@@ -273,6 +273,10 @@
 \newcommand{\maketableofcontents}{%
   \clearpage
   \tableofcontents
+  \clearpage
+  \listoftables
+  \clearpage
+  \listoffigures
   \clearpage\pagenumbering{arabic}
 }
 
