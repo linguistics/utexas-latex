@@ -44,6 +44,7 @@
 \setcitestyle{round,comma,yysep={;}}
 
 % table of contents configuration
+\RequirePackage[nottoc]{tocbibind}
 \RequirePackage{tocloft}
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\cftdotsep}{0.25} % default: 4.5
@@ -272,8 +273,6 @@
 
 \newcommand{\makebibliography}[1]{%
   \clearpage%
-  % TODO: make the TOC Bibliography link go to the right page
-  \addcontentsline{toc}{chapter}{\bibname}%
   \bibliography{#1}
 }
 
