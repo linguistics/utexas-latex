@@ -37,8 +37,10 @@
 % even those at the beginning of chapters/sections
 \RequirePackage{indentfirst}
 % > Paragraph indentions may be five to ten spaces.
-% The guidelines/examples use .5 inch, though.
-\setlength{\parindent}{.5in} % defaults to ~1.5em
+% The width of a space for the normal font is 3pt, making the legal range 15pt to 30pt.
+% The official Word template uses .5 inch (≈36pt)
+% LaTeX's default \parindent is 1.5em (=18pt), which falls within the legal range.
+% \setlength{\parindent}{1.5em}
 
 \RequirePackage{natbib}
 \setcitestyle{round,comma,yysep={;}}
