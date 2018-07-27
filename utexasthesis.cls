@@ -50,6 +50,11 @@
 \RequirePackage{tocloft}
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\cftdotsep}{0.25} % default: 4.5
+% Prefix chapter numbers with "Chapter " and add space as needed
+\renewcommand{\cftchappresnum}{Chapter }
+\newlength{\cftchappresnum@width}
+\settowidth{\cftchappresnum@width}{\cftchappresnum}
+\addtolength{\cftchapnumwidth}{\cftchappresnum@width}
 
 \RequirePackage[hyphens]{url}
 \RequirePackage{hyperref}
