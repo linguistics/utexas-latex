@@ -11,7 +11,6 @@ Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [ute
 3. Fill in the required personal information by calling the following commands in your preamble (i.e., somewhere before `\begin{document}`):
    - `\title{The Title of Your Dissertation or Treatise}`
    - `\author{Full Official Name}`
-   - `\previousdegrees{B.A., M.A.}`
    - `\graduationdate{May}{2017}`
    - `\supervisor{Supervisor Name}`
    - `\cosupervisor{Cosupervisor Name}`
