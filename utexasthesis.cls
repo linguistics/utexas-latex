@@ -57,7 +57,7 @@
 \addtolength{\cftchapnumwidth}{\cftchappresnum@width}
 
 \RequirePackage[hyphens]{url}
-\RequirePackage{hyperref}
+\RequirePackage[pdfusetitle]{hyperref}
 % hyperlink DOIs in bibliography (for BibTeX entries with doi fields)
 \RequirePackage{doi}
 
