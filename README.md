@@ -11,6 +11,7 @@ Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [ute
 3. Fill in the required personal information by calling the following commands in your preamble (i.e., somewhere before `\begin{document}`):
    - `\title{The Title of Your Dissertation or Treatise}`
    - `\author{Full Official Name}`
+     + This should match the "Name of Doctoral Candidate" field on your official "Request For Final Oral Examination" form.
    - `\graduationdate{May}{2017}`
    - `\supervisor{Supervisor Name}`
    - `\cosupervisor{Cosupervisor Name}`
@@ -35,7 +36,7 @@ You can use any font supported by your LaTeX distribution; e.g., to use the Pala
 
     \usepackage{palatino}
 
-Or to use Times, along with a teletype font that's more compact than Courier (which is used in URLs):
+Or to use Times, along with a teletype font (which is used in URLs) that's more compact than Courier:
 
     \usepackage{times}
     \renewcommand*\ttdefault{cmvtt}
@@ -52,15 +53,19 @@ which are supplied in the `\documentclass{}` call, e.g., `\documentclass[masters
   + The signatures page is styled differently.
 - **`copyright`**: adds a copyright page at the beginning of your thesis.
 - Line spacing (defaults to `onehalfspacing` if omitted):
-  + **`singlespacing`**: uses single-spacing throughout the document.
-  + **`onehalfspacing`**: uses 1.5-spacing throughout the document.
-  + **`doublespacing`**: uses double-spacing throughout the document.
+  + **`singlespacing`**: Use single-spacing throughout the document,
+    which is prohibited by the formatting guidelines.
+  + **`onehalfspacing`**: Use 1.5-spacing throughout the document.
+  + **`doublespacing`**: Use double-spacing throughout the document.
 - Font sizes (defaults to `12pt` if omitted):
-  + **`10pt`**: Use 10 point font, which is not recommended by the formatting guidelines.
-  + **`11pt`**: Use 11 point font, which is not recommended by the formatting guidelines.
+  + **`10pt`**: Use 10 point font,
+    which is not recommended by the formatting guidelines.
+  + **`11pt`**: Use 11 point font,
+    which is not recommended by the formatting guidelines.
   + **`12pt`**: Use 12 point font.
 - **`draft`**: renders a compact version of your thesis.
-  The layout does not comply with the graduate school requirements, but may be useful to print out drafts for review.
+  The layout does not comply with the graduate school requirements,
+  but may be useful to print out drafts for review.
   + This option applies the usual `draft` class options to the underlying `report` class.
   + The copyright page is omitted even if the `copyright` option is used.
   + The signatures page is omitted.
@@ -83,6 +88,7 @@ The following packages are imported by `utexasthesis`:
 * `indentfirst` (to indent every paragraph, even at the beginning of chapters and sections)
 * `natbib`
 * `tocloft`
+* `tocbibind`
 * `url`
 * `hyperref`
 * `doi` (to hyperlink DOIs in bibliography)
