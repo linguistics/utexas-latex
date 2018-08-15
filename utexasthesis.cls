@@ -1,7 +1,7 @@
 % UT Austin graduate thesis style. https://github.com/linguistics/utexas-latex
 % License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
 \NeedsTeXFormat{LaTeX2e}%[1994/06/01]
-\ProvidesClass{utexasthesis}[2018/07/26 v0.7 University of Texas at Austin graduate thesis style]
+\ProvidesClass{utexasthesis}[2018/08/15 v0.8 University of Texas at Austin graduate thesis style]
 
 % prepare boolean variables and set defaults
 \newif\if@masters\@mastersfalse
@@ -296,6 +296,12 @@
   \clearpage
   \listoffigures
   \clearpage\pagenumbering{arabic}
+}
+
+\newcommand{\makeappendix}{%
+  \appendix
+  % ensure that the TOC picks up the redefined value of \@chapapp
+  \addtocontents{toc}{\protect\renewcommand\protect\cftchappresnum{\@chapapp\ }}
 }
 
 \newcommand{\makebibliography}[1]{%
