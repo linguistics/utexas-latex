@@ -94,6 +94,21 @@ The following packages are imported by `utexasthesis`:
 * `doi` (to hyperlink DOIs in bibliography)
 
 
+### F.A.Q.
+
+- **Q**: How do I number subsubsections?
+     E.g., <code><i>Chap</i>.<i>Sec</i>.<i>Subsec</i>.<i>Subsubsec</i></code>
+
+  **A**: Set the `secnumdepth` and `tocdepth` counters:
+  ```latex
+  % number subsubsections
+  \setcounter{secnumdepth}{3} % default: 2 (which only numbers up to subsections)
+  % include subsubsections in table of contents
+  \setcounter{tocdepth}{3} % default: 2
+  ```
+  See [How to show subsections and subsubsections in TOC?](https://tex.stackexchange.com/a/17879) for details.
+
+
 ## License
 
 The `utexasthesis` document class and related materials are [CC0](https://creativecommons.org/publicdomain/zero/1.0/)-licensed.
