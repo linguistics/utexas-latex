@@ -1,7 +1,7 @@
 % UT Austin graduate thesis style. https://github.com/linguistics/utexas-latex
 % License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
 \NeedsTeXFormat{LaTeX2e}%[1994/06/01]
-\ProvidesClass{utexasthesis}[2018/08/15 v0.8 University of Texas at Austin graduate thesis style]
+\ProvidesClass{utexasthesis}[2018/08/20 v0.9 University of Texas at Austin graduate thesis style]
 
 % prepare boolean variables and set defaults
 \newif\if@masters\@mastersfalse
@@ -124,7 +124,7 @@
                              {\end{center}\vspace*{\fill}}
 
 \newcommand{\@signature}[1]{%
-  \vskip\baselineskip\par\rule{\textwidth}{.7pt}%
+  \vskip2\baselineskip\par\rule{\textwidth}{.7pt}%
   \vskip-4.4pt\par#1}
 % this question is one of the best and only sources on \@for I could find: https://tex.stackexchange.com/q/2933
 \newcommand{\@makesignatures}{%
