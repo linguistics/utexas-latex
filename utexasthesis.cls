@@ -123,7 +123,9 @@
 \newenvironment{middlecenter}{\vspace*{\fill}\begin{center}}%
                              {\end{center}\vspace*{\fill}}
 
-\newcommand{\@signature}[1]{\parskip=\baselineskip\par\rule{\textwidth}{.7pt}\parskip=-4.4pt\par#1}
+\newcommand{\@signature}[1]{%
+  \parskip=\baselineskip\par\rule{\textwidth}{.7pt}%
+  \parskip=-4.4pt\par#1}
 % this question is one of the best and only sources on \@for I could find: https://tex.stackexchange.com/q/2933
 \newcommand{\@makesignatures}{%
   \@signature{\@supervisor, Supervisor}
