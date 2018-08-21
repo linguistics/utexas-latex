@@ -1,7 +1,7 @@
 % UT Austin graduate thesis style. https://github.com/linguistics/utexas-latex
 % License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
 \NeedsTeXFormat{LaTeX2e}%[1994/06/01]
-\ProvidesClass{utexasthesis}[2018/08/20 v0.9 University of Texas at Austin graduate thesis style]
+\ProvidesClass{utexasthesis}[2018/08/21 v1.0 University of Texas at Austin graduate thesis style]
 
 % prepare boolean variables and set defaults
 \newif\if@masters\@mastersfalse
@@ -91,15 +91,18 @@
 % toc/lot/lof heading configuration
 \setlength{\cftbeforetoctitleskip}{\z@}
 \setlength{\cftaftertoctitleskip}{.25\baselineskip}
-\renewcommand{\cfttoctitlefont}{\headingsize\bfseries}
+\renewcommand{\cfttoctitlefont}{\headingsize\bfseries\hspace*{\fill}}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
 % copy toc to lot
 \setlength{\cftbeforelottitleskip}{\cftbeforetoctitleskip}
 \setlength{\cftafterlottitleskip}{\cftaftertoctitleskip}
 \renewcommand{\cftlottitlefont}{\cfttoctitlefont}
+\renewcommand{\cftafterlottitle}{\cftaftertoctitle}
 % copy toc to lof
 \setlength{\cftbeforeloftitleskip}{\cftbeforetoctitleskip}
 \setlength{\cftafterloftitleskip}{\cftaftertoctitleskip}
 \renewcommand{\cftloftitlefont}{\cfttoctitlefont}
+\renewcommand{\cftafterloftitle}{\cftaftertoctitle}
 
 % Set up default values and setters
 \def\@university{University of Texas at Austin}
