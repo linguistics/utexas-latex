@@ -195,22 +195,18 @@
   \clearpage\thispagestyle{empty}
   \begin{center}
     \begin{doublespace}
-      \textbf{\headingsize\@title}
-
-      \hbox
+      \headingsize\bfseries
+      \@title
+      \vskip2\baselineskip
 
       by
 
-      \hbox
+      \@author
+      \vskip2\baselineskip
 
-      \textbf{\@author}
+      \@doctype
 
-      \hbox
-
-      \textbf{\@doctype}
-
-      \hbox
-
+      \normalsize\mdseries
       Presented to the Faculty of the Graduate School
 
       of \@university
@@ -220,12 +216,11 @@
       of the Requirements
 
       for the Degree of
+      \vskip\baselineskip
 
-      \hbox
-
-      \textbf{\@degree}
-
-      \hbox
+      \headingsize\bfseries
+      \@degree
+      \vskip\baselineskip
 
       \@university
 
