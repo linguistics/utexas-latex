@@ -128,7 +128,7 @@
 
 \newcommand{\@signature}[1]{%
   \vskip2\baselineskip\par\rule{\textwidth}{.7pt}%
-  \vskip-4.4pt\par#1}
+  \vskip-7.2pt\par#1}
 % this question is one of the best and only sources on \@for I could find: https://tex.stackexchange.com/q/2933
 \newcommand{\@makesignatures}{%
   \@signature{\@supervisor, Supervisor}
@@ -157,55 +157,39 @@
     \end{middlecenter}
   \fi
 
-  % generate signature page, which differs between Masters and Dissertation
+  % generate signature page
   \clearpage\thispagestyle{empty}
-  \if@masters
+  \begin{onehalfspace}
+    \bfseries
     \begin{center}
+      The \@doctype{} Committee for \@author{}
+
+      Certifies that this is the approved version of the following \@doctype:
+      \vskip2\baselineskip
+
       \begin{doublespace}
-        \textbf{\small The \@doctype{} committee for \@author{} certifies that this is the approved
-        version of the following \MakeLowercase\@doctype:}
-
-        \hbox
-
-        \hbox
-
-        \textbf{\headingsize\@title}
-
-        \hbox
-
-        \hbox
+        \headingsize
+        \@title
       \end{doublespace}
     \end{center}
     \hspace{.5\textwidth}\begin{minipage}{.5\textwidth}
-      \begin{doublespace}
-        \textbf{APPROVED BY}
+      % this is the only part that differs substantially between Masters and Dissertation
+      \if@masters
+        \vskip4\baselineskip
+        \headingsize
+        APPROVED BY
 
-        \textbf{SUPERVISING COMMITTEE:}
+        SUPERVISING COMMITTEE:
+      \else
+        \vskip2\baselineskip
+        Committee:
+      \fi
 
-        \@makesignatures
-      \end{doublespace}
+      \normalsize
+      \mdseries
+      \@makesignatures
     \end{minipage}
-  \else
-    \begin{center}
-      \begin{singlespace}
-        The \@doctype{} Committee for \@author{} certifies that this is the approved
-        version of the following \MakeLowercase\@doctype:
-
-        \hbox
-      \end{singlespace}
-      \begin{doublespace}
-        \textbf{\headingsize\@title}
-      \end{doublespace}
-    \end{center}
-    \hspace{.5\textwidth}\begin{minipage}{.5\textwidth}
-      \begin{singlespace}
-        \textbf{Committee:}
-        \vskip1.5\baselineskip
-
-        \@makesignatures
-      \end{singlespace}
-    \end{minipage}
-  \fi
+  \end{onehalfspace}
 
   % generate the actual title page
   \clearpage\thispagestyle{empty}
