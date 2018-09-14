@@ -3,6 +3,9 @@
 The [Digital Submission Requirement](https://gradschool.utexas.edu/academics/theses-and-dissertations/digital-submission-requirement) page describes the requirements for Masters and Ph.D. thesis submissions.
 Most `utexas.edu` URLs are fragile; if that link is dead, try searching for [utexas graduate thesis style](https://www.google.com/search?q=utexas+graduate+thesis+style).
 
+This style is available from [![CTAN favicon](https://www.ctan.org/assets/favicon/favicon-16x16.png) CTAN](https://www.ctan.org/pkg/utexasthesis) as of 2018-09-13.
+Run `tlmgr update --all` to ensure your LaTeX distribution uses the latest version.
+
 
 ### Instructions
 
@@ -29,7 +32,7 @@ View the `pdflatex` render of `basic.tex` on GitHub at [`basic.pdf`](https://git
 
 ### Customizations
 
-The formatting guide doesn't specify a required font face.
+The formatting guide doesn't require a specific font face.
 The `utexasthesis` class doesn't set one, which leaves "Computer Modern Roman" as the default font family.
 
 You can use any font supported by your LaTeX distribution; e.g., to use the Palatino font, as in the formatting guideline's examples:
