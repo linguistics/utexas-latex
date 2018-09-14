@@ -1,7 +1,7 @@
 % UT Austin graduate thesis style. https://github.com/linguistics/utexas-latex
 % License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/)
 \NeedsTeXFormat{LaTeX2e}%[1994/06/01]
-\ProvidesClass{utexasthesis}[2018/08/21 v1.0 University of Texas at Austin graduate thesis style]
+\ProvidesClass{utexasthesis}[2018/09/14 v1.1 University of Texas at Austin graduate thesis style]
 
 % prepare boolean variables and set defaults
 \newif\if@masters\@mastersfalse
