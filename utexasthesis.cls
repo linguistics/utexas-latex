@@ -105,7 +105,7 @@
 \renewcommand{\cftafterloftitle}{\cftaftertoctitle}
 
 % Set up default values and setters
-\def\@university{University of Texas at Austin}
+\def\@university{The University of Texas at Austin}
 \newcommand{\graduationdate}[2]{\gdef\@graduationmonth{#1}\gdef\@graduationyear{#2}}
 \newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
 \newcommand{\cosupervisor}[1]{\gdef\@cosupervisor{#1}}
@@ -213,7 +213,7 @@
 
       Presented to the Faculty of the Graduate School
 
-      of the \@university
+      of \@university
 
       in Partial Fulfillment
 
@@ -227,7 +227,7 @@
 
       \hbox
 
-      The \@university
+      \@university
 
       \@graduationmonth{} \@graduationyear{}
     \end{doublespace}
@@ -262,7 +262,7 @@
 
       \@author, \@degreeabbr
 
-      The \@university, \@graduationyear
+      \@university, \@graduationyear
 
       \@ifundefined{@cosupervisor}{
         Supervisor: \@supervisor{}
