@@ -243,21 +243,18 @@
   \clearpage
   \begin{center}
     \begin{doublespace}
-      {\headingsize\textbf{Abstract}}
+      \headingsize\bfseries
+      Abstract
+      \vskip\baselineskip
 
-      \hbox
+      \@title
+      \vskip\baselineskip
 
-      {\headingsize\textbf{\@title}}
-
-      \hbox
-
-      by
-
-      \hbox
-
+      \normalsize\mdseries
       \@author, \@degreeabbr
 
       \@university, \@graduationyear
+      \vskip\baselineskip
 
       \@ifundefined{@cosupervisor}{
         Supervisor: \@supervisor{}
