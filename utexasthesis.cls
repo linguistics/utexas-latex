@@ -50,6 +50,8 @@
 \RequirePackage{natbib}
 \fi
 
+\setcitestyle{round,comma,yysep={;}}
+
 % table of contents configuration
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{tocloft}
