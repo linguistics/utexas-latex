@@ -127,7 +127,7 @@
                              {\end{center}\vspace*{\fill}}
 
 \newcommand{\@signature}[1]{%
-  \vskip2\baselineskip\par\rule{\textwidth}{.7pt}%
+  \vskip2\baselineskip\par\hfill%
   \vskip-7.2pt\par#1}
 % this question is one of the best and only sources on \@for I could find: https://tex.stackexchange.com/q/2933
 \newcommand{\@makesignatures}{%
