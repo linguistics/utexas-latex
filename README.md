@@ -74,6 +74,7 @@ which are supplied in the `\documentclass{}` call, e.g., `\documentclass[masters
   + The signatures page is omitted.
   + The main title page is omitted.
   + Chapters do not trigger a page break.
+- **`apacite`**: allows for the use of apacite with natbib.
 
 All of these can be used in combination, separated by commas.
 The few options that have overlapping effects will give priority to the last-listed argument(s) in the listings above.

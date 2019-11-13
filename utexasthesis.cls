@@ -7,9 +7,11 @@
 \newif\if@masters\@mastersfalse
 \newif\if@copyright\@copyrightfalse
 \newif\if@draft\@draftfalse
+\newif\if@apacite\@apacitefalse
 % handle optional arguments
 \DeclareOption{masters}{\@masterstrue}
 \DeclareOption{copyright}{\@copyrighttrue}
+\DeclareOption{apacite}{\@apacitetrue}
 \DeclareOption{draft}{\@drafttrue\PassOptionsToClass{draft}{report}}
 % capture the basic setspace package options for passing into setspace later
 \def\@setspaceoption{onehalfspacing}
@@ -42,7 +44,12 @@
 % LaTeX's default \parindent is 1.5em (=18pt), which falls within the legal range.
 % \setlength{\parindent}{1.5em}
 
+\if@apacite
+\RequirePackage[natbibapa]{apacite}
+\else
 \RequirePackage{natbib}
+\fi
+
 \setcitestyle{round,comma,yysep={;}}
 
 % table of contents configuration
